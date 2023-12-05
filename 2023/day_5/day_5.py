@@ -63,31 +63,31 @@ print(min(locations))
 
 #%%
 
-def interrogateMatrixList(seedStart, seedRange, M):
-        minLoc = np.Inf
-        for j in range(seedStart, seedStart + seedRange):
-                print(j, seedStart + seedRange - j)
-                v = j
-                for M in matrices:
-                        q = v
-                        # print(q)
-                        # print(M[:, 2])
-                        qq = np.multiply(q >= M[:, 1], q < M[:, 1] + M[:, 2])
-                        qq = np.squeeze(np.array(qq))
-                        qi = np.where(qq)
-                        # print(qi)
+# def interrogateMatrixList(seedStart, seedRange, M):
+#         minLoc = np.Inf
+#         for j in range(seedStart, seedStart + seedRange):
+#                 print(j, seedStart + seedRange - j)
+#                 v = j
+#                 for M in matrices:
+#                         q = v
+#                         # print(q)
+#                         # print(M[:, 2])
+#                         qq = np.multiply(q >= M[:, 1], q < M[:, 1] + M[:, 2])
+#                         qq = np.squeeze(np.array(qq))
+#                         qi = np.where(qq)
+#                         # print(qi)
 
-                        if(qi[0].shape[0] == 0):
-                                None
-                        else:
-                                v = M[qi[0][0], 0] + (v -  M[qi[0][0], 1])
-                minLoc = min([minLoc, v])
-        return minLoc
+#                         if(qi[0].shape[0] == 0):
+#                                 None
+#                         else:
+#                                 v = M[qi[0][0], 0] + (v -  M[qi[0][0], 1])
+#                 minLoc = min([minLoc, v])
+#         return minLoc
 
-allLocs = []
-for seedStart, seedRange in zip(seeds[0::2], seeds[1::2]):
-        tLoc = interrogateMatrixList(seedStart, seedRange, M)
-        allLocs.append(tLoc)
+# allLocs = []
+# for seedStart, seedRange in zip(seeds[0::2], seeds[1::2]):
+#         tLoc = interrogateMatrixList(seedStart, seedRange, M)
+#         allLocs.append(tLoc)
 
 
 
